@@ -3,6 +3,8 @@ package com.test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
@@ -18,9 +20,18 @@ public class FirstTest {
 	@Test
 	public void tc_1() throws InterruptedException
 	{
-
-		System.setProperty("webdriver.gecko.driver", driverPath+"geckodriver.exe");
-		WebDriver driver = new FirefoxDriver();
+		
+		ChromeOptions chromeOptions = new ChromeOptions();
+		//chromeOptions.setBinary("/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary");
+		//chromeOptions.setBinary(driverPath+"chromedriver.exe");
+		chromeOptions.addArguments("--headless");
+			System.setProperty("webdriver.chrome.driver", driverPath+"chromedriver.exe");
+		WebDriver driver = new ChromeDriver(chromeOptions);
+			///WebDriver driver = new ChromeDriver();
+		//System.setProperty("webdriver.gecko.driver", driverPath+"geckodriver.exe");
+		//WebDriver driver = new FirefoxDriver();
+		
+		
 				
 		driver.get("http://www.google.com");
 		
@@ -32,6 +43,8 @@ public class FirstTest {
 		driver.findElement(By.linkText("Downloads - Selenium")).click();
 		
 		System.out.println("Test passed");
+		
+		driver.quit();
 		
 	}
 	
