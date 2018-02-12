@@ -21,13 +21,13 @@ public class FirstTest {
 	public void tc_1() throws InterruptedException
 	{
 		
-		ChromeOptions chromeOptions = new ChromeOptions();
+		//ChromeOptions chromeOptions = new ChromeOptions();
 		//chromeOptions.setBinary("/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary");
 		//chromeOptions.setBinary(driverPath+"chromedriver.exe");
-		chromeOptions.addArguments("--headless");
+		//chromeOptions.addArguments("--headless");
 			System.setProperty("webdriver.chrome.driver", driverPath+"chromedriver.exe");
-		WebDriver driver = new ChromeDriver(chromeOptions);
-			///WebDriver driver = new ChromeDriver();
+		//WebDriver driver = new ChromeDriver(chromeOptions);
+			WebDriver driver = new ChromeDriver();
 		//System.setProperty("webdriver.gecko.driver", driverPath+"geckodriver.exe");
 		//WebDriver driver = new FirefoxDriver();
 		
