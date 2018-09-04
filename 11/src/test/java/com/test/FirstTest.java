@@ -42,7 +42,7 @@ public class FirstTest {
 		Thread.sleep(3000l);
 		driver.findElement(By.linkText("Downloads - Selenium")).click();
 		
-		System.out.println("Test passed");
+		System.out.println("Test passed successfully");
 		
 		driver.quit();
 		
